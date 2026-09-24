@@ -65,12 +65,12 @@ const programs: Program[] = [
   },
 ];
 
-export default function Price() {
+export default function ServiceShortcut() {
   return (
     <section className="max-w-7xl mx-auto px-6 py-20">
       <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900">
         Pilih program belajar{" "}
-        <span className="text-teal-600">sesuai kebutuhan</span>
+        <span className="text-[#1B3B5D]">sesuai kebutuhan</span>
       </h2>
       <p className="mt-4 text-lg text-slate-600 max-w-2xl">
         Mulai dari online course belajar mandiri lewat video, bootcamp
@@ -102,8 +102,8 @@ function ProgramCard({ program }: { program: Program }) {
       <div
         className={
           isDark
-            ? "w-14 h-14 rounded-xl bg-white/10 flex items-center justify-center text-teal-400 mb-6"
-            : "w-14 h-14 rounded-xl bg-teal-50 flex items-center justify-center text-teal-600 mb-6"
+            ? "w-14 h-14 rounded-xl bg-white/10 flex items-center justify-center text-white/80 mb-6"
+            : "w-14 h-14 rounded-xl bg-secondary flex items-center justify-center text-secondary-foreground mb-6"
         }
       >
         <Icon className="w-6 h-6" />
@@ -126,8 +126,8 @@ function ProgramCard({ program }: { program: Program }) {
             <span
               className={
                 isDark
-                  ? "mt-0.5 shrink-0 w-4 h-4 rounded-full bg-teal-500/20 text-teal-400 flex items-center justify-center"
-                  : "mt-0.5 shrink-0 w-4 h-4 rounded-full bg-teal-50 text-teal-600 flex items-center justify-center"
+                  ? "mt-0.5 shrink-0 w-4 h-4 rounded-full bg-secondary/20 text-secondary-foreground flex items-center justify-center"
+                  : "mt-0.5 shrink-0 w-4 h-4 rounded-full bg-secondary text-secondary-foreground flex items-center justify-center"
               }
             >
               <Check className="w-2.5 h-2.5" strokeWidth={3} />
@@ -143,8 +143,8 @@ function ProgramCard({ program }: { program: Program }) {
         href={program.href}
         className={
           isDark
-            ? "mt-auto inline-flex items-center gap-1.5 text-teal-400 font-semibold text-sm hover:text-teal-300 transition-colors"
-            : "mt-auto inline-flex items-center gap-1.5 text-teal-600 font-semibold text-sm hover:text-teal-700 transition-colors"
+            ? "mt-auto inline-flex items-center gap-1.5 text-white/80 font-semibold text-sm hover:text-white transition-colors"
+            : "mt-auto inline-flex items-center gap-1.5 text-primary font-semibold text-sm hover:text-primary/80 transition-colors"
         }
       >
         Lihat Selengkapnya

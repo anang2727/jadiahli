@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 export default function ConsultCta() {
   return (
     <section className="max-w-7xl mx-auto px-6 pb-20">
-      <div className="bg-teal-50 rounded-2xl px-6 sm:px-10 py-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div className="bg-secondary rounded-2xl px-6 sm:px-10 py-8 flex flex-col sm:flex-row items-center justify-between gap-6">
         <div>
           <h2 className="text-xl font-bold text-slate-900">
             Bingung pilih course yang mana?
@@ -19,7 +19,7 @@ export default function ConsultCta() {
         </div>
 
         <Button
-          className="bg-teal-600 hover:bg-teal-700 gap-2 flex-shrink-0"
+          className="bg-primary hover:bg-primary/90 gap-2 flex-shrink-0"
           asChild
         >
           <Link href="#konsultasi">

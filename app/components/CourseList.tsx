@@ -16,7 +16,6 @@ interface Course {
   status: CourseStatus;
   price?: number;
   originalPrice?: number;
-  gradient: string;
   tag?: string;
 }
 
@@ -27,7 +26,6 @@ const courses: Course[] = [
     videoCount: 49,
     level: "Beginner",
     status: "segera-hadir",
-    gradient: "from-indigo-500 via-purple-500 to-fuchsia-500",
   },
   {
     slug: "cyber-security-fundamental",
@@ -35,7 +33,6 @@ const courses: Course[] = [
     videoCount: 25,
     level: "Beginner",
     status: "segera-hadir",
-    gradient: "from-slate-800 via-emerald-900 to-slate-800",
   },
   {
     slug: "belajar-python-agentic-ai",
@@ -45,7 +42,6 @@ const courses: Course[] = [
     status: "tersedia",
     price: 298500,
     originalPrice: 1500000,
-    gradient: "from-teal-600 via-teal-500 to-blue-900",
     tag: "Trending",
   },
   {
@@ -56,7 +52,6 @@ const courses: Course[] = [
     status: "tersedia",
     price: 349000,
     originalPrice: 899000,
-    gradient: "from-cyan-500 via-blue-500 to-blue-900",
   },
 ];
 
@@ -68,7 +63,7 @@ function formatRupiah(value: number): string {
   }).format(value);
 }
 
-export default function Courses() {
+export default function CourseList() {
   const scrollerRef = useRef<HTMLDivElement>(null);
 
   function scrollByCard(direction: "left" | "right") {
@@ -83,13 +78,13 @@ export default function Courses() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-end justify-between gap-6 flex-wrap">
           <div>
-            <p className="flex items-center gap-2 text-teal-600 text-sm font-semibold tracking-wide mb-3">
-              <span className="w-6 h-px bg-teal-600" />
+            <p className="flex items-center gap-2 text-[#1B3B5D] text-sm font-semibold tracking-wide mb-3">
+              <span className="w-6 h-px bg-[#1B3B5D]" />
               COURSE TERBARU
             </p>
             <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900 max-w-3xl">
               Mulai dari fundamental sampai{" "}
-              <span className="text-teal-600">AI-powered apps</span>
+              <span className="text-[#1B3B5D]">AI-powered apps</span>
             </h2>
           </div>
 
@@ -98,7 +93,7 @@ export default function Courses() {
               type="button"
               onClick={() => scrollByCard("left")}
               aria-label="Sebelumnya"
-              className="w-10 h-10 rounded-full border border-slate-200 bg-white flex items-center justify-center text-slate-500 hover:text-teal-600 hover:border-teal-200 transition-colors"
+              className="w-10 h-10 rounded-full border border-slate-200 bg-white flex items-center justify-center text-slate-500 hover:text-[#1B3B5D] hover:border-[#D4E2F0] transition-colors"
             >
               <ChevronLeft className="w-4 h-4" />
             </button>
@@ -106,7 +101,7 @@ export default function Courses() {
               type="button"
               onClick={() => scrollByCard("right")}
               aria-label="Berikutnya"
-              className="w-10 h-10 rounded-full bg-teal-600 flex items-center justify-center text-white hover:bg-teal-700 transition-colors"
+              className="w-10 h-10 rounded-full bg-[#1B3B5D] flex items-center justify-center text-white hover:bg-[#16314f] transition-colors"
             >
               <ChevronRight className="w-4 h-4" />
             </button>
@@ -144,22 +139,27 @@ function CourseCard({ course }: { course: Course }) {
 
   return (
     <article className="snap-start shrink-0 w-75 bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden flex flex-col">
-      <div
-        className={`relative h-40 bg-linear-to-br ${course.gradient} flex items-end p-4`}
-      >
+      <div className="relative h-40 overflow-hidden bg-slate-200">
+        <img
+          src="https://placehold.co/600x400"
+          alt={course.title}
+          className="h-full w-full object-cover"
+        />
         {course.tag && (
           <Badge className="absolute top-3 left-3 bg-white/90 text-slate-900 hover:bg-white/90">
             {course.tag}
           </Badge>
         )}
         {discountPercent !== null && (
-          <Badge className="absolute top-3 right-3 bg-white text-teal-700 hover:bg-white">
+          <Badge className="absolute top-3 right-3 bg-white text-[#1B3B5D] hover:bg-white">
             {discountPercent}% Off
           </Badge>
         )}
-        <p className="text-white/90 text-sm font-semibold">
-          {course.level} · {course.videoCount}+ video
-        </p>
+        <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-slate-900/70 to-transparent p-4">
+          <p className="text-white/90 text-sm font-semibold">
+            {course.level} · {course.videoCount}+ video
+          </p>
+        </div>
       </div>
 
       <div className="p-5 flex flex-col flex-1">
@@ -197,7 +197,7 @@ function CourseCard({ course }: { course: Course }) {
 
         <Button
           variant="outline"
-          className="mt-4 w-full justify-center gap-1.5 border-slate-200 hover:border-teal-600 hover:text-teal-700"
+          className="mt-4 w-full justify-center gap-1.5 border-slate-200 hover:border-[#1B3B5D] hover:text-[#1B3B5D]"
           asChild
         >
           <Link href={`/course/${course.slug}`}>

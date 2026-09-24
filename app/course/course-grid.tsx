@@ -128,12 +128,12 @@ function formatRupiah(value: number): string {
 export default function CourseGrid() {
   return (
     <section id="seluruh-course" className="max-w-7xl mx-auto px-6 py-20">
-      <p className="flex items-center gap-2 text-teal-600 text-sm font-semibold tracking-wide mb-3">
-        <span className="w-6 h-px bg-teal-600" />
+      <p className="flex items-center gap-2 text-primary text-sm font-semibold tracking-wide mb-3">
+        <span className="w-6 h-px bg-primary" />
         SELURUH COURSE
       </p>
       <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900 max-w-2xl">
-        Pilih program belajar <span className="text-teal-600">sesuai kebutuhan</span>
+        Pilih program belajar <span className="text-primary">sesuai kebutuhan</span>
       </h2>
       <p className="mt-4 text-lg text-slate-600 max-w-2xl">
         Kami menyediakan berbagai macam course yang dapat membantu kamu
@@ -159,17 +159,22 @@ function CourseCard({ course }: { course: Course }) {
 
   return (
     <article className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden flex flex-col">
-      <div
-        className={`relative h-40 bg-gradient-to-br ${course.gradient} flex items-end p-4`}
-      >
+      <div className="relative h-48 overflow-hidden bg-slate-200">
+        <img
+          src="https://placehold.co/600x400"
+          alt={course.title}
+          className="h-full w-full object-cover"
+        />
         {discountPercent !== null && (
-          <Badge className="absolute top-3 right-3 bg-white text-teal-700 hover:bg-white">
+          <Badge className="absolute top-3 right-3 bg-white text-primary hover:bg-white">
             {discountPercent}% Off
           </Badge>
         )}
-        <p className="text-white/90 text-sm font-semibold">
-          {course.level} &middot; {course.videoCount}+ video
-        </p>
+        <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-slate-900/70 to-transparent p-4">
+          <p className="text-white/90 text-sm font-semibold">
+            {course.level} &middot; {course.videoCount}+ video
+          </p>
+        </div>
       </div>
 
       <div className="p-5 flex flex-col flex-1">
@@ -207,7 +212,7 @@ function CourseCard({ course }: { course: Course }) {
 
         <Button
           variant="outline"
-          className="mt-4 w-full justify-center gap-1.5 border-slate-200 hover:border-teal-600 hover:text-teal-700"
+          className="mt-4 w-full justify-center gap-1.5 border-slate-200 hover:border-primary hover:text-primary"
           asChild
         >
           <Link href={`/course/${course.slug}`}>

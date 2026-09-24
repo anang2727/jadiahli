@@ -86,7 +86,7 @@ export default function Footer() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-sm text-slate-400 hover:text-teal-400 transition-colors"
+                      className="text-sm text-slate-400 hover:text-primary transition-colors"
                     >
                       {link.label}
                     </Link>
@@ -109,7 +109,7 @@ export default function Footer() {
                   key={social.label}
                   href={social.href}
                   aria-label={social.label}
-                  className="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:bg-teal-600 hover:text-white transition-colors"
+                  className="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:bg-primary hover:text-white transition-colors"
                 >
                   <Icon className="w-4 h-4" />
                 </a>

@@ -13,14 +13,14 @@ export default function BootcampHero() {
   return (
     <section className="max-w-7xl mx-auto px-6 pt-14 pb-24 grid lg:grid-cols-2 gap-14 items-center">
       <div>
-        <p className="flex items-center gap-2 text-teal-600 text-sm font-semibold tracking-wide mb-4">
-          <span className="w-6 h-px bg-teal-600" />
+        <p className="flex items-center gap-2 text-primary text-sm font-semibold tracking-wide mb-4">
+          <span className="w-6 h-px bg-primary" />
           BOOTCAMP
         </p>
 
         <h1 className="text-4xl sm:text-5xl font-extrabold leading-[1.15] tracking-tight text-slate-900">
-          Belajar <span className="text-teal-600">langsung</span> bersama
-          dengan <span className="text-teal-600">mentor terbaik</span> kami
+          Belajar <span className="text-primary">langsung</span> bersama
+          dengan <span className="text-primary">mentor terbaik</span> kami
         </h1>
 
         <p className="mt-6 text-slate-600 text-lg leading-relaxed max-w-lg">
@@ -31,7 +31,7 @@ export default function BootcampHero() {
         <div className="mt-8 flex flex-wrap items-center gap-4">
           <Button
             size="lg"
-            className="bg-teal-600 hover:bg-teal-700 gap-2 px-6 py-6 text-base font-semibold"
+            className="bg-primary hover:bg-primary/90 gap-2 px-6 py-6 text-base font-semibold"
             asChild
           >
             <Link href="#program-bootcamp">
@@ -64,13 +64,13 @@ export default function BootcampHero() {
           aria-hidden
         />
 
-        <div className="absolute top-6 left-2 z-20 w-11 h-11 rounded-xl bg-teal-50 flex items-center justify-center text-teal-600 shadow-md">
+        <div className="absolute top-6 left-2 z-20 w-11 h-11 rounded-xl bg-secondary flex items-center justify-center text-secondary-foreground shadow-md">
           <Languages className="w-5 h-5" />
         </div>
-        <div className="absolute top-24 -left-4 z-20 w-11 h-11 rounded-xl bg-teal-50 flex items-center justify-center text-teal-600 shadow-md">
+        <div className="absolute top-24 -left-4 z-20 w-11 h-11 rounded-xl bg-secondary flex items-center justify-center text-secondary-foreground shadow-md">
           <Wrench className="w-5 h-5" />
         </div>
-        <div className="absolute -top-2 right-4 z-20 w-16 h-16 rounded-full bg-white border-4 border-teal-100 flex items-center justify-center text-teal-600 shadow-md">
+        <div className="absolute -top-2 right-4 z-20 w-16 h-16 rounded-full bg-white border-4 border-secondary flex items-center justify-center text-secondary-foreground shadow-md">
           <GraduationCap className="w-7 h-7" />
         </div>
 
@@ -96,7 +96,7 @@ export default function BootcampHero() {
           </div>
         </div>
 
-        <div className="absolute -bottom-5 right-6 z-20 bg-teal-600 text-white text-sm font-semibold px-4 py-2 rounded-full shadow-lg">
+        <div className="absolute -bottom-5 right-6 z-20 bg-primary text-white text-sm font-semibold px-4 py-2 rounded-full shadow-lg">
           Bootcamp
         </div>
       </div>

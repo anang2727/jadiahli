@@ -55,12 +55,12 @@ const bootcamps: Bootcamp[] = [
 export default function BootcampGrid() {
   return (
     <section id="program-bootcamp" className="max-w-7xl mx-auto px-6 pb-24">
-      <p className="flex items-center gap-2 text-teal-600 text-sm font-semibold tracking-wide mb-3">
-        <span className="w-6 h-px bg-teal-600" />
+      <p className="flex items-center gap-2 text-primary text-sm font-semibold tracking-wide mb-3">
+        <span className="w-6 h-px bg-primary" />
         BOOTCAMP TERBARU KAMI
       </p>
       <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900 max-w-2xl">
-        Pilih program belajar <span className="text-teal-600">sesuai kebutuhan</span>
+        Pilih program belajar <span className="text-primary">sesuai kebutuhan</span>
       </h2>
       <p className="mt-4 text-lg text-slate-600 max-w-2xl">
         Kami menyediakan berbagai macam bootcamp yang dapat membantu kamu
@@ -89,7 +89,7 @@ function BootcampCard({ bootcamp }: { bootcamp: Bootcamp }) {
           <h3 className="text-2xl font-extrabold text-white mt-1 leading-snug">
             {bootcamp.bannerTitle}
           </h3>
-          <p className="text-teal-300 text-sm font-medium mt-1">
+          <p className="text-secondary-foreground text-sm font-medium mt-1">
             {bootcamp.bannerSubtitle}
           </p>
         </div>
@@ -130,7 +130,7 @@ function BootcampCard({ bootcamp }: { bootcamp: Bootcamp }) {
         </div>
 
         <div className="mt-5 flex flex-wrap items-center gap-3">
-          <Button className="bg-teal-600 hover:bg-teal-700 gap-1.5" asChild>
+          <Button className="bg-primary hover:bg-primary/90 gap-1.5" asChild>
             <Link href={`/bootcamp/${bootcamp.slug}`}>
               Lihat Detail
               <ArrowRight className="w-4 h-4" />

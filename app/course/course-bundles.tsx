@@ -47,7 +47,7 @@ function formatRupiah(value: number): string {
 export default function CourseBundles() {
   return (
     <section className="max-w-7xl mx-auto px-6 pb-20">
-      <Card className="bg-gradient-to-br from-slate-900 to-slate-950 border-slate-800 rounded-3xl p-8 sm:p-10">
+      <Card className="bg-linear-to-br from-slate-900 to-slate-950 border-slate-800 rounded-3xl p-8 sm:p-10">
         <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
           Sekarang tersedia kelas bundle
         </h2>
@@ -71,7 +71,7 @@ function BundleCard({ bundle }: { bundle: Bundle }) {
   return (
     <div className="bg-slate-100 rounded-2xl p-4 flex flex-col sm:flex-row sm:items-center gap-4">
       <div
-        className={`w-full sm:w-40 h-24 flex-shrink-0 rounded-xl bg-gradient-to-br ${bundle.gradient} flex items-center justify-center`}
+        className={`w-full sm:w-40 h-24 shrink-0 rounded-xl bg-linear-to-br ${bundle.gradient} flex items-center justify-center`}
       >
         <Layers className="w-8 h-8 text-white/80" />
       </div>
@@ -79,7 +79,7 @@ function BundleCard({ bundle }: { bundle: Bundle }) {
       <div className="flex-1">
         <h3 className="font-bold text-slate-900">{bundle.title}</h3>
         <p className="text-sm text-slate-600 mt-1">{bundle.description}</p>
-        <p className="text-xs font-semibold text-teal-700 mt-2">
+        <p className="text-xs font-semibold text-primary mt-2">
           {bundle.courseCount} Course
         </p>
         <p className="mt-2 flex items-baseline gap-2">
@@ -92,7 +92,7 @@ function BundleCard({ bundle }: { bundle: Bundle }) {
         </p>
       </div>
 
-      <Button className="bg-teal-600 hover:bg-teal-700 w-full sm:w-auto gap-1.5" asChild>
+      <Button className="bg-primary hover:bg-primary/90 w-full sm:w-auto gap-1.5" asChild>
         <Link href={`/checkout/${bundle.slug}`}>
           Beli Sekarang
           <ArrowRight className="w-4 h-4" />

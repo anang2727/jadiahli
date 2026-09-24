@@ -1,17 +1,21 @@
-import Hero from "./components/Hero";
-import Features from "./components/Features";
-import Course from "./components/Course";
-import Price from "./components/Price";
-import Founders from "./components/Founders";
+import MainHero from "./components/MainHero";
+import BenefitList from "./components/BenefitList";
+import CourseList from "./components/CourseList";
+import ServiceShortcut from "./components/ServiceShortcut";
+import ActiveBootcampList from "./components/ActiveBootcampList";
+import TestimonialList from "./components/TestimonialList";
+import FaqSection from "./components/FaqSection";
 
 export default function Home() {
   return (
     <main className="bg-white text-slate-900">
-      <Hero />
-      <Features />
-      <Course />
-      <Price />
-      <Founders />
+      <MainHero />
+      <ServiceShortcut />
+      <CourseList />
+      <BenefitList />
+      <ActiveBootcampList />
+      <TestimonialList />
+      <FaqSection />
     </main>
   );
 }
