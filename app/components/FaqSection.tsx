@@ -3,15 +3,9 @@
 import { useId, useState } from "react";
 import type { FC, SVGProps } from "react";
 import { Container } from "@/components/ui/container";
+import type { FaqItem } from "@/types/faq";
 
 /** Warna utama -> #1B3B5D */
-const PRIMARY = "#1B3B5D";
-
-interface FaqItem {
-  id: string;
-  question: string;
-  answer: string;
-}
 
 /**
  * Jawaban di bawah ini hanya contoh (placeholder) karena gambar
@@ -87,8 +81,8 @@ const FaqRow: FC<FaqRowProps> = ({ item, isOpen, onToggle, baseId }) => {
           aria-expanded={isOpen}
           aria-controls={panelId}
           onClick={() => onToggle(item.id)}
-          className="flex w-full items-center justify-between gap-4 rounded-xl px-5 py-5 text-left text-base font-medium text-gray-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 sm:px-7 sm:text-[17px]"
-          style={{ outlineColor: PRIMARY }}
+          className="flex w-full items-center justify-between gap-4 rounded-xl px-5 py-5 text-left text-base font-medium text-gray-900 focus-visible:outline-2 focus-visible:outline-offset-2 sm:px-7 sm:text-[17px]"
+          style={{ outlineColor: "var(--primary)" }}
         >
           <span>{item.question}</span>
           <ChevronDownIcon
@@ -131,12 +125,12 @@ const FaqSection: FC = () => {
         <div className="flex items-center gap-3">
           <span
             className="block h-px w-7"
-            style={{ backgroundColor: PRIMARY }}
+            style={{ backgroundColor: "var(--primary)" }}
             aria-hidden="true"
           />
           <span
             className="font-mono text-[11px] uppercase tracking-[0.18em]"
-            style={{ color: PRIMARY }}
+            style={{ color: "var(--primary)" }}
           >
             FAQ
           </span>
@@ -144,10 +138,10 @@ const FaqSection: FC = () => {
 
         <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl md:text-5xl">
           Pertanyaan yang{" "}
-          <span style={{ color: PRIMARY }}>sering ditanyakan</span>
+          <span style={{ color: "var(--primary)" }}>sering ditanyakan</span>
         </h2>
 
-        <div className="mt-8 flex flex-col gap-3 md:mt-12 md:gap-[18px]">
+        <div className="mt-8 flex flex-col gap-3 md:mt-12 md:gap-4.5">
           {FAQS.map((item) => (
             <FaqRow
               key={item.id}

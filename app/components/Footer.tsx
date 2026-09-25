@@ -2,43 +2,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { MapPin, Phone } from "lucide-react";
 import { FaInstagram, FaLinkedinIn } from "react-icons/fa6";
+import type { FooterColumn } from "@/types/content";
+import globalData from "@/data/global.json";
 
-interface FooterLink {
-  label: string;
-  href: string;
-}
-
-interface FooterColumn {
-  title: string;
-  links: FooterLink[];
-}
-
-const footerColumns: FooterColumn[] = [
-  {
-    title: "Program",
-    links: [
-      { label: "Online Course", href: "/program/online-course" },
-      { label: "Bootcamp", href: "/program/bootcamp" },
-      { label: "Partnership", href: "/program/partnership" },
-    ],
-  },
-  {
-    title: "Company",
-    links: [
-      { label: "Tentang Kami", href: "/tentang-kami" },
-      { label: "Blog", href: "/blog" },
-      { label: "Komunitas", href: "/komunitas" },
-    ],
-  },
-  {
-    title: "Support",
-    links: [
-      { label: "Hubungi Kami", href: "/kontak" },
-      { label: "Syarat dan Ketentuan", href: "/syarat-ketentuan" },
-      { label: "Kebijakan Privasi", href: "/kebijakan-privasi" },
-    ],
-  },
-];
+const footerColumns: FooterColumn[] = globalData.footerColumns as FooterColumn[];
 
 const socialLinks = [
   { icon: FaInstagram, href: "#", label: "Instagram" },
@@ -54,11 +21,11 @@ export default function Footer() {
         <div className="bg-slate-950 rounded-3xl px-8 py-10 grid md:grid-cols-[1.4fr_1fr_1fr_1fr] gap-10">
           <div>
             <Image
-              src="/jadi-ahli-logo-white.png"
+              src="/jadi-ahli-logo.png"
               alt="Jadi Ahli"
               width={140}
               height={36}
-              className="h-8 w-auto"
+              className="h-8 w-auto rounded"
             />
             <p className="mt-5 font-bold text-white">PT Jadi Ahli Inovasi Digital</p>
             <p className="mt-2 text-sm text-slate-400 leading-relaxed max-w-xs">

@@ -1,0 +1,60 @@
+[
+  {
+    "id": "umum",
+    "label": "Umum",
+    "items": [
+      { "id": "apa-itu-wpu", "question": "Apa itu WPU Course?", "answer": "WPU Course adalah platform edutech yang menyediakan course dan bootcamp di bidang teknologi, mulai dari pemrograman dasar hingga topik lanjutan seperti web development dan AI." },
+      { "id": "siapa-target", "question": "Siapa saja yang bisa belajar di WPU Course?", "answer": "Siapa pun bisa belajar di sini, mulai dari pemula yang belum punya pengalaman coding sama sekali, mahasiswa, hingga profesional yang ingin meningkatkan atau menambah skill baru." },
+      { "id": "perlu-pengalaman", "question": "Apakah saya perlu punya pengalaman coding sebelumnya?", "answer": "Tidak wajib. Sebagian besar course dan bootcamp kami menyediakan materi dari level dasar, jadi pemula pun bisa mengikuti dengan nyaman." },
+      { "id": "perbedaan-course-bootcamp", "question": "Apa perbedaan Course dan Bootcamp?", "answer": "Course adalah video pembelajaran mandiri yang bisa diakses kapan saja sesuai kecepatan belajarmu. Bootcamp adalah program intensif dengan jadwal live session bersama mentor dan real case project." },
+      { "id": "bahasa-pengantar", "question": "Bahasa apa yang digunakan dalam materi pembelajaran?", "answer": "Seluruh materi disampaikan dalam Bahasa Indonesia agar lebih mudah dipahami, kecuali pada course tertentu yang memang berfokus pada pembelajaran Bahasa Inggris." }
+    ]
+  },
+  {
+    "id": "pembelajaran",
+    "label": "Pembelajaran",
+    "items": [
+      { "id": "online", "question": "Apakah pembelajaran dilakukan secara online?", "answer": "Ya, seluruh pembelajaran dilakukan secara online sehingga kamu bisa belajar dari mana saja selama terhubung dengan internet." },
+      { "id": "jadwal", "question": "Apakah ada jadwal belajar yang tetap untuk course?", "answer": "Untuk course, kamu bisa belajar kapan saja sesuai waktu luangmu. Jadwal tetap hanya berlaku pada program bootcamp yang memiliki live session." },
+      { "id": "proses", "question": "Bagaimana proses pembelajarannya?", "answer": "Kamu akan belajar melalui video materi yang terstruktur, latihan praktik, serta real case project. Kamu juga bisa bertanya langsung jika menemui kendala." },
+      { "id": "tatap-muka", "question": "Apakah ada sesi tatap muka online dengan mentor?", "answer": "Ada. Program bootcamp menyediakan live session bersama mentor expert, termasuk sesi tanya jawab untuk membahas materi dan project." },
+      { "id": "diunduh", "question": "Apakah materi pembelajaran dapat diunduh?", "answer": "Materi dapat diakses kapan saja melalui platform selama masa akses masih berlaku. Untuk ketentuan unduhan materi, silakan hubungi tim kami melalui konsultasi gratis." },
+      { "id": "kecepatan-belajar", "question": "Bisakah saya belajar dengan kecepatan saya sendiri?", "answer": "Tentu. Untuk course, kamu bebas menonton, mengulang, atau melompati bagian tertentu sesuai kebutuhan dan kecepatan belajarmu sendiri." },
+      { "id": "real-case-project", "question": "Apa itu real case project?", "answer": "Real case project adalah studi kasus atau simulasi project nyata yang dirancang menyerupai pekerjaan di industri, sehingga kamu terbiasa menyelesaikan masalah seperti di dunia kerja sesungguhnya." },
+      { "id": "quiz-latihan", "question": "Apakah ada kuis atau latihan soal di setiap materi?", "answer": "Sebagian besar course dilengkapi dengan latihan soal atau tugas praktik di setiap sesi untuk membantu kamu mengukur pemahaman sebelum lanjut ke materi berikutnya." }
+    ]
+  },
+  {
+    "id": "pembayaran",
+    "label": "Pembayaran & Harga",
+    "items": [
+      { "id": "metode-pembayaran", "question": "Metode pembayaran apa saja yang tersedia?", "answer": "Kami menyediakan berbagai metode pembayaran, seperti transfer bank, virtual account, e-wallet, dan kartu kredit/debit, tergantung ketersediaan pada saat proses checkout." },
+      { "id": "cicilan", "question": "Apakah bisa membayar dengan cicilan?", "answer": "Untuk beberapa program bootcamp, opsi cicilan mungkin tersedia melalui mitra pembayaran kami. Silakan hubungi tim kami untuk informasi lebih lanjut sebelum mendaftar." },
+      { "id": "akses-sekali-bayar", "question": "Apakah course hanya sekali bayar untuk akses selamanya?", "answer": "Ya, untuk sebagian besar course, kamu hanya perlu membayar sekali untuk mendapatkan akses selamanya, termasuk pembaruan materi jika ada di kemudian hari." },
+      { "id": "refund", "question": "Apakah ada kebijakan refund jika saya tidak puas?", "answer": "Kami memiliki kebijakan refund dengan syarat dan ketentuan tertentu, seperti batas waktu pengajuan dan persentase materi yang sudah diakses. Detail lengkap dapat dilihat pada halaman kebijakan refund atau dengan menghubungi tim kami." },
+      { "id": "bundle", "question": "Apa keuntungan membeli kelas bundle?", "answer": "Dengan membeli kelas bundle, kamu mendapatkan akses ke beberapa course sekaligus dengan harga yang jauh lebih hemat dibandingkan membeli satu per satu." },
+      { "id": "diskon-promo", "question": "Apakah ada diskon atau promo tertentu?", "answer": "Kami cukup sering mengadakan promo terbatas untuk course maupun bundle tertentu. Pantau halaman utama atau media sosial kami agar tidak ketinggalan info promo terbaru." }
+    ]
+  },
+  {
+    "id": "sertifikat",
+    "label": "Sertifikat & Karir",
+    "items": [
+      { "id": "sertifikat-selesai", "question": "Apakah saya mendapatkan sertifikat setelah menyelesaikan course?", "answer": "Ya, kamu akan mendapatkan sertifikat digital setelah menyelesaikan seluruh materi dan tugas yang disyaratkan pada course atau bootcamp yang diikuti." },
+      { "id": "sertifikat-diakui", "question": "Apakah sertifikat WPU Course diakui oleh perusahaan?", "answer": "Sertifikat kami menunjukkan bukti bahwa kamu telah menyelesaikan pembelajaran tertentu. Namun, pengakuan akhir tetap bergantung pada kebijakan masing-masing perusahaan atau industri." },
+      { "id": "bantuan-karir", "question": "Apakah ada bantuan pencarian kerja setelah lulus bootcamp?", "answer": "Untuk beberapa program bootcamp, kami menyediakan pendampingan seperti review portofolio dan tips wawancara kerja. Ketersediaan program ini dapat berbeda-beda tiap batch, jadi cek detail masing-masing bootcamp." },
+      { "id": "portofolio", "question": "Apakah saya akan memiliki portofolio setelah belajar di sini?", "answer": "Ya, melalui real case project dan tugas praktik di sepanjang course maupun bootcamp, kamu akan membangun portofolio yang bisa ditunjukkan ke calon perusahaan atau klien." }
+    ]
+  },
+  {
+    "id": "akun-teknis",
+    "label": "Akun & Teknis",
+    "items": [
+      { "id": "buat-akun", "question": "Bagaimana cara membuat akun di WPU Course?", "answer": "Kamu bisa mendaftar langsung melalui halaman pendaftaran menggunakan email atau akun Google kamu, kemudian mengikuti langkah verifikasi yang diberikan." },
+      { "id": "lupa-password", "question": "Bagaimana jika saya lupa password akun?", "answer": "Kamu bisa menggunakan fitur 'Lupa Password' pada halaman login untuk mengatur ulang password melalui email yang terdaftar." },
+      { "id": "perangkat", "question": "Perangkat apa saja yang bisa digunakan untuk mengakses materi?", "answer": "Kamu bisa mengakses materi melalui laptop, komputer, maupun smartphone, selama terhubung dengan koneksi internet dan menggunakan browser yang mendukung." },
+      { "id": "kendala-teknis", "question": "Video tidak bisa diputar atau ada kendala teknis lain, harus bagaimana?", "answer": "Silakan coba refresh halaman atau berpindah browser terlebih dahulu. Jika kendala masih berlanjut, hubungi tim support kami melalui halaman kontak agar segera dibantu." },
+      { "id": "multi-device", "question": "Bisakah satu akun digunakan di beberapa perangkat sekaligus?", "answer": "Satu akun dapat digunakan untuk login di beberapa perangkat, namun disarankan hanya menonton di satu perangkat pada satu waktu agar pengalaman belajar tetap optimal." }
+    ]
+  }
+]

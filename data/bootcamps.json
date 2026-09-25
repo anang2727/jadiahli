@@ -1,0 +1,28 @@
+[
+  {
+    "slug": "english-for-it-professionals",
+    "bannerTitle": "English For IT Professional",
+    "bannerSubtitle": "Kick Start Your Global Career",
+    "title": "English for IT Professionals",
+    "description": "Bootcamp yang siap membantu kamu lebih percaya diri dan profesional menggunakan bahasa Inggris khususnya dalam bidang IT.",
+    "note": "*Mulai belajar akhir September.",
+    "sessionCount": 15,
+    "schedule": "Setiap Rabu jam 19.00 WIB & Sabtu jam 10.00 WIB",
+    "gradient": "from-amber-900 via-amber-800 to-slate-900",
+    "availability": "open",
+    "availabilityLabel": "Pendaftaran Batch 3"
+  },
+  {
+    "slug": "ui-ux-design-masterclass",
+    "bannerTitle": "UI/UX Design Masterclass",
+    "bannerSubtitle": "Design Your Future",
+    "title": "UI/UX Design Masterclass",
+    "description": "Bootcamp yang menawarkan penguatan mindset dan skillset praktis untuk pemahaman mendasar tentang UI/UX design.",
+    "note": "*Pendaftaran Batch 2 akan dibuka Juli 2026",
+    "sessionCount": 20,
+    "schedule": "Setiap Selasa, Rabu, Kamis jam 19.30 WIB",
+    "gradient": "from-emerald-900 via-teal-900 to-slate-900",
+    "availability": "sold-out",
+    "availabilityLabel": "Batch 1 Sold Out"
+  }
+]

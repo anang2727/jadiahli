@@ -1,16 +1,10 @@
 import type { CSSProperties, FC } from "react";
 import { Container } from "@/components/ui/container";
+import type { Testimonial } from "@/types/content";
 
 /** Warna utama -> #1B3B5D */
-const PRIMARY = "#1B3B5D";
 
 type MarqueeDirection = "left" | "right";
-
-interface Testimonial {
-  id: string;
-  name: string;
-  quote: string;
-}
 
 const TOP_ROW: readonly Testimonial[] = [
   {
@@ -124,7 +118,7 @@ const TestimonialCard: FC<TestimonialCardProps> = ({ testimonial, hidden }) => (
   >
     <figcaption
       className="text-base font-semibold sm:text-[17px]"
-      style={{ color: PRIMARY }}
+      style={{ color: "var(--primary)" }}
     >
       {testimonial.name}
     </figcaption>
@@ -171,12 +165,12 @@ const TestimonialList: FC = () => {
         <div className="flex items-center gap-3">
           <span
             className="block h-px w-6"
-            style={{ backgroundColor: PRIMARY }}
+            style={{ backgroundColor: "var(--primary)" }}
             aria-hidden="true"
           />
           <span
             className="font-mono text-[11px] uppercase tracking-[0.18em]"
-            style={{ color: PRIMARY }}
+            style={{ color: "var(--primary)" }}
           >
             Testimonial Student
           </span>
@@ -184,7 +178,7 @@ const TestimonialList: FC = () => {
 
         <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl md:text-5xl lg:text-6xl">
           Cerita dari mereka yang sudah{" "}
-          <span style={{ color: PRIMARY }}>level up</span>
+          <span style={{ color: "var(--primary)" }}>level up</span>
         </h2>
       </Container>
 

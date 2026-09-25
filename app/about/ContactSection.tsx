@@ -1,41 +1,8 @@
 import type { FC } from "react";
+import type { ContactItem } from "@/types/content";
+import globalData from "@/data/global.json";
 
-const PRIMARY = "#1B3B5D";
-
-interface ContactItem {
-  id: string;
-  label: string;
-  value: string;
-  /** Jika diisi, nilai akan dirender sebagai link. */
-  href?: string;
-  external?: boolean;
-}
-
-const CONTACTS: readonly ContactItem[] = [
-  {
-    id: "whatsapp",
-    label: "WhatsApp",
-    value: "+62 851 9006 2005",
-    href: "https://wa.me/6285190062005",
-    external: true,
-  },
-  {
-    id: "email",
-    label: "Email",
-    value: "info@wpucourse.id",
-    href: "mailto:info@wpucourse.id",
-  },
-  {
-    id: "lokasi",
-    label: "Lokasi",
-    value: "Bandung, Indonesia",
-  },
-  {
-    id: "jam-operasional",
-    label: "Jam Operasional",
-    value: "Senin - Jumat · 08.00 - 17.00 WIB",
-  },
-];
+const CONTACTS: readonly ContactItem[] = globalData.contacts as ContactItem[];
 
 interface ContactValueProps {
   item: ContactItem;
@@ -43,14 +10,13 @@ interface ContactValueProps {
 
 const ContactValue: FC<ContactValueProps> = ({ item }) => {
   const className =
-    "text-lg font-semibold tracking-tight sm:text-xl break-words";
-
+    "text-lg font-semibold tracking-tight sm:text-xl wrap-break-word";
   if (item.href) {
     return (
       <a
         href={item.href}
         className={`${className} hover:underline`}
-        style={{ color: PRIMARY }}
+        style={{ color: "var(--primary)" }}
         {...(item.external
           ? { target: "_blank", rel: "noopener noreferrer" }
           : {})}
@@ -61,7 +27,7 @@ const ContactValue: FC<ContactValueProps> = ({ item }) => {
   }
 
   return (
-    <span className={className} style={{ color: PRIMARY }}>
+    <span className={className} style={{ color: "var(--primary)" }}>
       {item.value}
     </span>
   );
@@ -70,20 +36,20 @@ const ContactValue: FC<ContactValueProps> = ({ item }) => {
 const ContactSection: FC = () => {
   return (
     <section className="w-full bg-white px-4 py-10 sm:px-6 md:py-14 lg:px-12">
-      <div className="mx-auto max-w-[1440px]">
+      <div className="mx-auto max-w-360">
         <div className="flex items-center gap-3">
           <span
             className="block h-px w-7"
-            style={{ backgroundColor: PRIMARY }}
+            style={{ backgroundColor: "var(--primary)" }}
             aria-hidden="true"
           />
           <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-gray-600">
-            Hubungi <span style={{ color: PRIMARY }}>Kami</span>
+            Hubungi <span style={{ color: "var(--primary)" }}>Kami</span>
           </span>
         </div>
 
         <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl md:text-5xl">
-          Mari kita saling <span style={{ color: PRIMARY }}>terhubung</span>
+          Mari kita saling <span style={{ color: "var(--primary)" }}>terhubung</span>
         </h2>
 
         <p className="mt-3 max-w-3xl text-sm text-gray-600 sm:text-base md:text-lg">

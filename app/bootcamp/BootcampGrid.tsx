@@ -4,53 +4,7 @@ import Link from "next/link";
 import { ArrowRight, GraduationCap, MessageCircle, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-
-type BootcampAvailability = "open" | "sold-out" | "upcoming";
-
-interface Bootcamp {
-  slug: string;
-  bannerTitle: string;
-  bannerSubtitle: string;
-  title: string;
-  description: string;
-  note: string;
-  sessionCount: number;
-  schedule: string;
-  gradient: string;
-  availability: BootcampAvailability;
-  availabilityLabel: string;
-}
-
-const bootcamps: Bootcamp[] = [
-  {
-    slug: "english-for-it-professionals",
-    bannerTitle: "English For IT Professional",
-    bannerSubtitle: "Kick Start Your Global Career",
-    title: "English for IT Professionals",
-    description:
-      "Bootcamp yang siap membantu kamu lebih percaya diri dan profesional menggunakan bahasa Inggris khususnya dalam bidang IT.",
-    note: "*Mulai belajar akhir September.",
-    sessionCount: 15,
-    schedule: "Setiap Rabu jam 19.00 WIB & Sabtu jam 10.00 WIB",
-    gradient: "from-amber-900 via-amber-800 to-slate-900",
-    availability: "open",
-    availabilityLabel: "Pendaftaran Batch 3",
-  },
-  {
-    slug: "ui-ux-design-masterclass",
-    bannerTitle: "UI/UX Design Masterclass",
-    bannerSubtitle: "Design Your Future",
-    title: "UI/UX Design Masterclass",
-    description:
-      "Bootcamp yang menawarkan penguatan mindset dan skillset praktis untuk pemahaman mendasar tentang UI/UX design.",
-    note: "*Pendaftaran Batch 2 akan dibuka Juli 2026",
-    sessionCount: 20,
-    schedule: "Setiap Selasa, Rabu, Kamis jam 19.30 WIB",
-    gradient: "from-emerald-900 via-teal-900 to-slate-900",
-    availability: "sold-out",
-    availabilityLabel: "Batch 1 Sold Out",
-  },
-];
+import { bootcamps, type Bootcamp } from "@/app/lib/bootcamps";
 
 export default function BootcampGrid() {
   return (
@@ -60,7 +14,8 @@ export default function BootcampGrid() {
         BOOTCAMP TERBARU KAMI
       </p>
       <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900 max-w-2xl">
-        Pilih program belajar <span className="text-primary">sesuai kebutuhan</span>
+        Pilih program belajar{" "}
+        <span className="text-primary">sesuai kebutuhan</span>
       </h2>
       <p className="mt-4 text-lg text-slate-600 max-w-2xl">
         Kami menyediakan berbagai macam bootcamp yang dapat membantu kamu
@@ -130,6 +85,7 @@ function BootcampCard({ bootcamp }: { bootcamp: Bootcamp }) {
         </div>
 
         <div className="mt-5 flex flex-wrap items-center gap-3">
+          {/* Lihat Detail -> /bootcamp/[slug], slug dipakai sebagai id halaman detail */}
           <Button className="bg-primary hover:bg-primary/90 gap-1.5" asChild>
             <Link href={`/bootcamp/${bootcamp.slug}`}>
               Lihat Detail

@@ -4,37 +4,10 @@ import Link from "next/link";
 import { ArrowRight, Layers } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import type { CourseBundle } from "@/types/course";
+import bundleData from "@/data/course-bundles.json";
 
-interface Bundle {
-  slug: string;
-  title: string;
-  description: string;
-  courseCount: number;
-  price: number;
-  originalPrice: number;
-  gradient: string;
-}
-
-const bundles: Bundle[] = [
-  {
-    slug: "web-dev-ultimate",
-    title: "Bundle Web Dev Ultimate",
-    description: "Belajar jadi Fullstack Web Developer dari 0 sampai mahir",
-    courseCount: 3,
-    price: 473000,
-    originalPrice: 3200000,
-    gradient: "from-emerald-500 to-slate-900",
-  },
-  {
-    slug: "architecting-the-future",
-    title: "Bundle Next.js AI",
-    description: "Satu paket lengkap untuk bangun aplikasi modern yang terintegrasi AI",
-    courseCount: 2,
-    price: 449000,
-    originalPrice: 3000000,
-    gradient: "from-indigo-500 to-slate-900",
-  },
-];
+const bundles: CourseBundle[] = bundleData as CourseBundle[];
 
 function formatRupiah(value: number): string {
   return new Intl.NumberFormat("id-ID", {
@@ -67,7 +40,7 @@ export default function CourseBundles() {
   );
 }
 
-function BundleCard({ bundle }: { bundle: Bundle }) {
+function BundleCard({ bundle }: { bundle: CourseBundle }) {
   return (
     <div className="bg-slate-100 rounded-2xl p-4 flex flex-col sm:flex-row sm:items-center gap-4">
       <div

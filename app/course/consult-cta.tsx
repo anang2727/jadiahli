@@ -19,7 +19,7 @@ export default function ConsultCta() {
         </div>
 
         <Button
-          className="bg-primary hover:bg-primary/90 gap-2 flex-shrink-0"
+          className="bg-primary hover:bg-primary/90 gap-2 shrink-0"
           asChild
         >
           <Link href="#konsultasi">

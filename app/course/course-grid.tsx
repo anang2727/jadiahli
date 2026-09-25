@@ -1,121 +1,14 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Clapperboard, Gauge } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import type { Course } from "@/types/course";
+import courseData from "@/data/courses.json";
 
-type CourseStatus = "tersedia" | "segera-hadir";
-
-interface Course {
-  slug: string;
-  title: string;
-  videoCount: number;
-  level: string;
-  status: CourseStatus;
-  price?: number;
-  originalPrice?: number;
-  gradient: string;
-}
-
-const courses: Course[] = [
-  {
-    slug: "belajar-java-dasar",
-    title: "Belajar Java Dasar",
-    videoCount: 49,
-    level: "Beginner",
-    status: "segera-hadir",
-    gradient: "from-indigo-500 via-purple-500 to-fuchsia-500",
-  },
-  {
-    slug: "cyber-security-fundamental",
-    title: "Cyber Security Fundamental",
-    videoCount: 25,
-    level: "Beginner",
-    status: "segera-hadir",
-    gradient: "from-slate-800 via-emerald-900 to-slate-800",
-  },
-  {
-    slug: "belajar-python-agentic-ai",
-    title: "Belajar Python Agentic AI",
-    videoCount: 57,
-    level: "Beginner",
-    status: "tersedia",
-    price: 298500,
-    originalPrice: 1500000,
-    gradient: "from-teal-600 via-teal-500 to-blue-900",
-  },
-  {
-    slug: "ai-powered-apps-fundamental",
-    title: "AI Powered Apps Fundamental",
-    videoCount: 49,
-    level: "Advanced",
-    status: "tersedia",
-    price: 349500,
-    originalPrice: 1500000,
-    gradient: "from-emerald-500 via-teal-600 to-slate-900",
-  },
-  {
-    slug: "belajar-web-dasar",
-    title: "Belajar Web Dasar",
-    videoCount: 100,
-    level: "Beginner",
-    status: "tersedia",
-    price: 342000,
-    originalPrice: 950000,
-    gradient: "from-violet-600 via-purple-600 to-slate-900",
-  },
-  {
-    slug: "recording-react-bootcamp",
-    title: "Recording React Bootcamp",
-    videoCount: 10,
-    level: "Beginner",
-    status: "tersedia",
-    price: 150000,
-    originalPrice: 750000,
-    gradient: "from-sky-500 via-blue-600 to-slate-900",
-  },
-  {
-    slug: "fullstack-go-reactjs",
-    title: "Fullstack Go ReactJS: Sistem Project Management",
-    videoCount: 195,
-    level: "Intermediate",
-    status: "tersedia",
-    price: 345000,
-    originalPrice: 1500000,
-    gradient: "from-blue-500 via-cyan-500 to-slate-900",
-  },
-  {
-    slug: "fullstack-nextjs",
-    title: "Full Stack Next JS: Realtime Point Of Sale Apps",
-    videoCount: 67,
-    level: "Intermediate",
-    status: "tersedia",
-    price: 300000,
-    originalPrice: 1500000,
-    gradient: "from-slate-700 via-slate-800 to-black",
-  },
-  {
-    slug: "belajar-laravel",
-    title: "Belajar Laravel",
-    videoCount: 162,
-    level: "Intermediate",
-    status: "tersedia",
-    price: 390000,
-    originalPrice: 1500000,
-    gradient: "from-red-500 via-rose-600 to-slate-900",
-  },
-  {
-    slug: "belajar-mern-stack",
-    title: "Belajar MERN Stack",
-    videoCount: 123,
-    level: "Intermediate",
-    status: "tersedia",
-    price: 330000,
-    originalPrice: 1500000,
-    gradient: "from-teal-600 via-emerald-600 to-slate-900",
-  },
-];
+const courses: Course[] = courseData as Course[];
 
 function formatRupiah(value: number): string {
   return new Intl.NumberFormat("id-ID", {
@@ -160,10 +53,12 @@ function CourseCard({ course }: { course: Course }) {
   return (
     <article className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden flex flex-col">
       <div className="relative h-48 overflow-hidden bg-slate-200">
-        <img
+        <Image
           src="https://placehold.co/600x400"
           alt={course.title}
-          className="h-full w-full object-cover"
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className="object-cover"
         />
         {discountPercent !== null && (
           <Badge className="absolute top-3 right-3 bg-white text-primary hover:bg-white">

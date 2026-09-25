@@ -1,27 +1,15 @@
 import type { FC, SVGProps } from "react";
+import type {
+  ActiveBootcamp,
+  ActiveBootcampStatus,
+} from "@/types/bootcamp";
 
 /**
  * Warna utama (sebelumnya hijau/teal) -> #1B3B5D
  * Pastikan Tailwind CSS sudah terpasang di project.
  */
-const PRIMARY = "#1B3B5D";
 
-type BootcampStatus = "open" | "soldout";
-
-interface Bootcamp {
-  id: string;
-  status: BootcampStatus;
-  badge: string;
-  title: string;
-  description: string;
-  note: string;
-  sessions: string;
-  schedule: string;
-  detailHref: string;
-  consultationHref: string;
-}
-
-const BOOTCAMPS: readonly Bootcamp[] = [
+const BOOTCAMPS: readonly ActiveBootcamp[] = [
   {
     id: "english-for-it-professionals",
     status: "open",
@@ -87,7 +75,7 @@ const WhatsAppIcon: FC<SVGProps<SVGSVGElement>> = (props) => (
 );
 
 interface BadgeProps {
-  status: BootcampStatus;
+  status: ActiveBootcampStatus;
   label: string;
 }
 
@@ -103,7 +91,10 @@ const Badge: FC<BadgeProps> = ({ status, label }) => {
   return (
     <span
       className="inline-flex items-center rounded-full px-2.5 py-1 font-mono text-[10px] font-semibold uppercase tracking-[0.08em]"
-      style={{ backgroundColor: `${PRIMARY}1A`, color: PRIMARY }}
+      style={{
+        backgroundColor: "color-mix(in srgb, var(--primary) 10%, transparent)",
+        color: "var(--primary)",
+      }}
     >
       {label}
     </span>
@@ -111,7 +102,7 @@ const Badge: FC<BadgeProps> = ({ status, label }) => {
 };
 
 interface BootcampCardProps {
-  bootcamp: Bootcamp;
+  bootcamp: ActiveBootcamp;
 }
 
 const BootcampCard: FC<BootcampCardProps> = ({ bootcamp }) => {
@@ -135,7 +126,7 @@ const BootcampCard: FC<BootcampCardProps> = ({ bootcamp }) => {
 
       <h3
         className="mt-5 text-2xl font-semibold tracking-tight sm:text-[28px] sm:leading-9"
-        style={{ color: PRIMARY }}
+        style={{ color: "var(--primary)" }}
       >
         {title}
       </h3>
@@ -171,7 +162,10 @@ const BootcampCard: FC<BootcampCardProps> = ({ bootcamp }) => {
         <a
           href={detailHref}
           className="inline-flex items-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2"
-          style={{ backgroundColor: PRIMARY, outlineColor: PRIMARY }}
+          style={{
+            backgroundColor: "var(--primary)",
+            outlineColor: "var(--primary)",
+          }}
         >
           Lihat Detail
           <ArrowRightIcon />
@@ -197,12 +191,12 @@ const ActiveBootcampList: FC = () => {
         <div className="flex items-center gap-3">
           <span
             className="block h-px w-6"
-            style={{ backgroundColor: PRIMARY }}
+            style={{ backgroundColor: "var(--primary)" }}
             aria-hidden="true"
           />
           <span
             className="font-mono text-[10px] uppercase tracking-[0.18em]"
-            style={{ color: PRIMARY }}
+            style={{ color: "var(--primary)" }}
           >
             Bootcamp Tersedia
           </span>
@@ -210,7 +204,7 @@ const ActiveBootcampList: FC = () => {
 
         <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl md:text-5xl">
           Live session bersama{" "}
-          <span style={{ color: PRIMARY }}>mentor expert</span>
+          <span style={{ color: "var(--primary)" }}>mentor expert</span>
         </h2>
 
         <p className="mt-3 max-w-3xl text-sm text-gray-600 sm:text-base">

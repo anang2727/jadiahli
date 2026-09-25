@@ -1,17 +1,10 @@
 import type { CSSProperties, FC } from "react";
+import type { CompanyInfo } from "@/types/content";
+import globalData from "@/data/global.json";
 
 /** Warna utama -> #1B3B5D */
-const PRIMARY = "#1B3B5D";
 
-interface CompanyInfo {
-  label: string;
-  value: string;
-}
-
-const COMPANY_INFO: readonly CompanyInfo[] = [
-  { label: "Didirikan sejak", value: "18 Januari 2025" },
-  { label: "Badan hukum", value: "PT WPU Inovasi Digital" },
-];
+const COMPANY_INFO: readonly CompanyInfo[] = globalData.companyInfo as CompanyInfo[];
 
 /** Pola grid tipis di latar belakang, memudar ke arah bawah. */
 const GRID_BACKGROUND: CSSProperties = {
@@ -31,16 +24,16 @@ const MainHero: FC = () => {
         aria-hidden="true"
       />
 
-      <div className="relative mx-auto max-w-[1440px]">
+      <div className="relative mx-auto max-w-360">
         <div className="flex items-center gap-3">
           <span
             className="block h-px w-7"
-            style={{ backgroundColor: PRIMARY }}
+            style={{ backgroundColor: "var(--primary)" }}
             aria-hidden="true"
           />
           <span
             className="font-mono text-[11px] uppercase tracking-[0.18em]"
-            style={{ color: PRIMARY }}
+            style={{ color: "var(--primary)" }}
           >
             Tentang Kami
           </span>
@@ -49,13 +42,13 @@ const MainHero: FC = () => {
         <h1 className="mt-5 text-3xl font-extrabold leading-[1.1] tracking-tight text-gray-900 sm:text-6xl lg:text-6xl">
           Membentuk talenta digital,
           <br className="hidden lg:block" />{" "}
-          <span style={{ color: PRIMARY }}>menyebarkan ilmu</span> ke seluruh
+          <span style={{ color: "var(--primary)" }}>menyebarkan ilmu</span> ke seluruh
           <br className="hidden lg:block" /> penjuru negeri.
         </h1>
 
         <div className="mt-10 border-t border-gray-200 pt-8 md:mt-12">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-[2.13fr_1fr_1fr] lg:gap-10">
-            <p className="max-w-[660px] text-base leading-relaxed text-gray-600 sm:text-lg lg:text-[19px] lg:leading-[1.9]">
+            <p className="max-w-165 text-base leading-relaxed text-gray-600 sm:text-lg lg:text-[19px] lg:leading-[1.9]">
               WPU Course adalah platform edutech yang berdiri di atas fondasi
               komunitas dan pengalaman puluhan tahun. Dari kanal YouTube
               edukasi sederhana di tahun 2015, kami berkembang menjadi platform
@@ -67,7 +60,7 @@ const MainHero: FC = () => {
               <dl key={info.label} className="lg:pt-1">
                 <dt
                   className="font-mono text-[11px] uppercase tracking-[0.18em]"
-                  style={{ color: PRIMARY }}
+                  style={{ color: "var(--primary)" }}
                 >
                   {info.label}
                 </dt>

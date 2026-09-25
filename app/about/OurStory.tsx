@@ -1,21 +1,20 @@
 import type { FC } from "react";
 
-const PRIMARY = "#1B3B5D";
 
 const OurStory: FC = () => {
   return (
     <section className="w-full bg-[#F7F8F8] px-4 py-12 sm:px-6 md:py-16 lg:px-14 lg:py-24">
-      <div className="mx-auto grid max-w-[1440px] grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16 xl:gap-24">
+      <div className="mx-auto grid max-w-360 grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16 xl:gap-24">
         <div>
           <div className="flex items-center gap-3">
             <span
               className="block h-px w-7"
-              style={{ backgroundColor: PRIMARY }}
+              style={{ backgroundColor: "var(--primary)" }}
               aria-hidden="true"
             />
             <span
               className="font-mono text-[11px] uppercase tracking-[0.18em]"
-              style={{ color: PRIMARY }}
+              style={{ color: "var(--primary)" }}
             >
               Kisah Kami
             </span>
@@ -23,7 +22,7 @@ const OurStory: FC = () => {
 
           <h2 className="mt-4 text-4xl font-extrabold leading-[1.15] tracking-tight text-gray-900 sm:text-5xl lg:text-[56px]">
             Dari kanal pembelajaran sederhana menjadi{" "}
-            <span style={{ color: PRIMARY }}>platform edutech</span>
+            <span style={{ color: "var(--primary)" }}>platform edutech</span>
           </h2>
         </div>
 

@@ -7,17 +7,9 @@ import {
   ShieldCheck,
   Video,
   Code2,
-  type LucideIcon,
 } from "lucide-react";
 import { Card } from "@/components/ui/card";
-
-interface FeatureTile {
-  slug: string;
-  title: string;
-  description: string;
-  icon: LucideIcon;
-  tone: "light" | "dark";
-}
+import type { FeatureTile } from "@/types/content";
 
 const featureTiles: FeatureTile[] = [
   {

@@ -1,0 +1,49 @@
+{
+  "navigationLinks": [
+    { "label": "Beranda", "href": "/", "position": "before-program", "active": true },
+    { "label": "Tentang Kami", "href": "/about", "position": "before-program" },
+    { "label": "FAQ", "href": "/faq", "position": "after-program" },
+    { "label": "Kontak", "href": "/contact", "position": "after-program" }
+  ],
+  "companyInfo": [
+    { "label": "Didirikan sejak", "value": "18 Januari 2025" },
+    { "label": "Badan hukum", "value": "PT WPU Inovasi Digital" }
+  ],
+  "contacts": [
+    { "id": "whatsapp", "label": "WhatsApp", "value": "+62 851 9006 2005", "href": "https://wa.me/6285190062005", "external": true },
+    { "id": "email", "label": "Email", "value": "info@wpucourse.id", "href": "mailto:info@wpucourse.id" },
+    { "id": "lokasi", "label": "Lokasi", "value": "Bandung, Indonesia" },
+    { "id": "jam-operasional", "label": "Jam Operasional", "value": "Senin - Jumat · 08.00 - 17.00 WIB" }
+  ],
+  "programs": [
+    { "label": "Online Course", "desc": "Belajar melalui video, akses selamanya dan dapatkan sertifikat", "href": "/course", "icon": "video" },
+    { "label": "Bootcamp", "desc": "Belajar secara interaktif untuk tingkatkan kemampuan digital kamu", "href": "/bootcamp", "icon": "book-open" },
+    { "label": "Partnership", "desc": "Kerjasama dengan perusahaan untuk branding dan promosi", "href": "/#partner", "icon": "handshake" }
+  ],
+  "footerColumns": [
+    {
+      "title": "Program",
+      "links": [
+        { "label": "Online Course", "href": "/program/online-course" },
+        { "label": "Bootcamp", "href": "/program/bootcamp" },
+        { "label": "Partnership", "href": "/program/partnership" }
+      ]
+    },
+    {
+      "title": "Company",
+      "links": [
+        { "label": "Tentang Kami", "href": "/tentang-kami" },
+        { "label": "Blog", "href": "/blog" },
+        { "label": "Komunitas", "href": "/komunitas" }
+      ]
+    },
+    {
+      "title": "Support",
+      "links": [
+        { "label": "Hubungi Kami", "href": "/kontak" },
+        { "label": "Syarat dan Ketentuan", "href": "/syarat-ketentuan" },
+        { "label": "Kebijakan Privasi", "href": "/kebijakan-privasi" }
+      ]
+    }
+  ]
+}

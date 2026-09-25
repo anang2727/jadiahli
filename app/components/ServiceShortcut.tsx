@@ -1,18 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Video, BookOpen, Handshake, Check, type LucideIcon } from "lucide-react";
+import { ArrowRight, Video, BookOpen, Handshake, Check } from "lucide-react";
 import { Card } from "@/components/ui/card";
-
-interface Program {
-  slug: string;
-  title: string;
-  description: string;
-  features: string[];
-  icon: LucideIcon;
-  href: string;
-  variant: "dark" | "light";
-}
+import type { Program } from "@/types/content";
 
 const programs: Program[] = [
   {

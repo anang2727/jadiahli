@@ -9,41 +9,15 @@ import {
   Cpu,
   Layers3,
   Video,
-  type LucideIcon,
 } from "lucide-react";
+import type { Roadmap } from "@/types/content";
+import type { RoadmapCourse } from "@/types/course";
 
 /** Foto placeholder. Ganti dengan URL/path gambar asli di data `roadmaps`. */
 const placeholderImage = (label: string, bgHex: string): string =>
   `https://placehold.co/420x240/${bgHex}/FFFFFF/png?text=${encodeURIComponent(
     label,
   )}`;
-
-interface StepCourse {
-  slug: string;
-  title: string;
-  videoCount: number;
-  level: string;
-  price?: number;
-  originalPrice?: number;
-  imageSrc: string;
-}
-
-interface RoadmapStep {
-  stepLabel: string;
-  title: string;
-  description: string;
-  optional?: boolean;
-  course: StepCourse;
-}
-
-interface Roadmap {
-  slug: string;
-  role: string;
-  tagline: string;
-  description: string;
-  icon: LucideIcon;
-  steps: RoadmapStep[];
-}
 
 const roadmaps: Roadmap[] = [
   {
@@ -247,7 +221,7 @@ const LevelIcon: FC<SVGProps<SVGSVGElement>> = (props) => (
 );
 
 interface StepCourseCardProps {
-  course: StepCourse;
+  course: RoadmapCourse;
 }
 
 const StepCourseCard: FC<StepCourseCardProps> = ({ course }) => {

@@ -5,55 +5,10 @@ import Link from "next/link";
 import { ArrowRight, ChevronLeft, ChevronRight, Clapperboard, Gauge } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import type { Course } from "@/types/course";
+import courseData from "@/data/courses.json";
 
-type CourseStatus = "tersedia" | "segera-hadir";
-
-interface Course {
-  slug: string;
-  title: string;
-  videoCount: number;
-  level: string;
-  status: CourseStatus;
-  price?: number;
-  originalPrice?: number;
-  tag?: string;
-}
-
-const courses: Course[] = [
-  {
-    slug: "belajar-java-dasar",
-    title: "Belajar Java Dasar",
-    videoCount: 49,
-    level: "Beginner",
-    status: "segera-hadir",
-  },
-  {
-    slug: "cyber-security-fundamental",
-    title: "Cyber Security Fundamental",
-    videoCount: 25,
-    level: "Beginner",
-    status: "segera-hadir",
-  },
-  {
-    slug: "belajar-python-agentic-ai",
-    title: "Belajar Python Agentic AI",
-    videoCount: 57,
-    level: "Beginner",
-    status: "tersedia",
-    price: 298500,
-    originalPrice: 1500000,
-    tag: "Trending",
-  },
-  {
-    slug: "belajar-golang-dasar",
-    title: "Belajar Golang Dasar",
-    videoCount: 32,
-    level: "Intermediate",
-    status: "tersedia",
-    price: 349000,
-    originalPrice: 899000,
-  },
-];
+const courses: Course[] = (courseData as Course[]).slice(0, 4);
 
 function formatRupiah(value: number): string {
   return new Intl.NumberFormat("id-ID", {

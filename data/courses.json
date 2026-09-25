@@ -1,0 +1,13 @@
+[
+  { "slug": "belajar-java-dasar", "title": "Belajar Java Dasar", "videoCount": 49, "level": "Beginner", "status": "segera-hadir", "gradient": "from-indigo-500 via-purple-500 to-fuchsia-500" },
+  { "slug": "cyber-security-fundamental", "title": "Cyber Security Fundamental", "videoCount": 25, "level": "Beginner", "status": "segera-hadir", "gradient": "from-slate-800 via-emerald-900 to-slate-800" },
+  { "slug": "belajar-python-agentic-ai", "title": "Belajar Python Agentic AI", "videoCount": 57, "level": "Beginner", "status": "tersedia", "price": 298500, "originalPrice": 1500000, "tag": "Trending", "gradient": "from-teal-600 via-teal-500 to-blue-900" },
+  { "slug": "belajar-golang-dasar", "title": "Belajar Golang Dasar", "videoCount": 32, "level": "Intermediate", "status": "tersedia", "price": 349000, "originalPrice": 899000, "gradient": "from-cyan-600 via-blue-600 to-slate-900" },
+  { "slug": "ai-powered-apps-fundamental", "title": "AI Powered Apps Fundamental", "videoCount": 49, "level": "Advanced", "status": "tersedia", "price": 349500, "originalPrice": 1500000, "gradient": "from-emerald-500 via-teal-600 to-slate-900" },
+  { "slug": "belajar-web-dasar", "title": "Belajar Web Dasar", "videoCount": 100, "level": "Beginner", "status": "tersedia", "price": 342000, "originalPrice": 950000, "gradient": "from-violet-600 via-purple-600 to-slate-900" },
+  { "slug": "recording-react-bootcamp", "title": "Recording React Bootcamp", "videoCount": 10, "level": "Beginner", "status": "tersedia", "price": 150000, "originalPrice": 750000, "gradient": "from-sky-500 via-blue-600 to-slate-900" },
+  { "slug": "fullstack-go-reactjs", "title": "Fullstack Go ReactJS: Sistem Project Management", "videoCount": 195, "level": "Intermediate", "status": "tersedia", "price": 345000, "originalPrice": 1500000, "gradient": "from-blue-500 via-cyan-500 to-slate-900" },
+  { "slug": "fullstack-nextjs", "title": "Full Stack Next JS: Realtime Point Of Sale Apps", "videoCount": 67, "level": "Intermediate", "status": "tersedia", "price": 300000, "originalPrice": 1500000, "gradient": "from-slate-700 via-slate-800 to-black" },
+  { "slug": "belajar-laravel", "title": "Belajar Laravel", "videoCount": 162, "level": "Intermediate", "status": "tersedia", "price": 390000, "originalPrice": 1500000, "gradient": "from-red-500 via-rose-600 to-slate-900" },
+  { "slug": "belajar-mern-stack", "title": "Belajar MERN Stack", "videoCount": 123, "level": "Intermediate", "status": "tersedia", "price": 330000, "originalPrice": 1500000, "gradient": "from-teal-600 via-emerald-600 to-slate-900" }
+]

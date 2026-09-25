@@ -12,39 +12,23 @@ import {
   Handshake,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import type { NavigationLink, NavigationProgram } from "@/types/content";
+import globalData from "@/data/global.json";
 
-interface ProgramItem {
-  label: string;
-  desc: string;
-  href: string;
-  icon: React.ComponentType<{ className?: string }>;
-  badge?: string;
-}
+const NAVIGATION_LINKS = globalData.navigationLinks as NavigationLink[];
+const PROGRAM_ICONS: Record<NavigationProgram["icon"], typeof Video> = {
+  video: Video,
+  "book-open": BookOpen,
+  handshake: Handshake,
+};
 
-const PROGRAM_ITEMS: ProgramItem[] = [
-  {
-    label: "Online Course",
-    desc: "Belajar melalui video, akses selamanya dan dapatkan sertifikat",
-    href: "/course",
-    icon: Video,
-  },
-  {
-    label: "Bootcamp",
-    desc: "Belajar secara interaktif untuk tingkatkan kemampuan digital kamu",
-    href: "/bootcamp",
-    icon: BookOpen,
-  },
-  {
-    label: "Partnership",
-    desc: "Kerjasama dengan perusahaan untuk branding dan promosi",
-    href: "/#partner",
-    icon: Handshake,
-  },
-];
+const PROGRAM_ITEMS = (globalData.programs as NavigationProgram[]).map(
+  (program) => ({ ...program, icon: PROGRAM_ICONS[program.icon] }),
+);
 
 const NAV_LINK_CLASS =
-  "px-1 py-2 text-slate-600 hover:text-[#1B3B5D] transition-colors";
-const NAV_LINK_ACTIVE_CLASS = "px-1 py-2 text-[#1B3B5D] font-medium";
+  "px-1 py-2 text-slate-600 hover:text-primary transition-colors";
+const NAV_LINK_ACTIVE_CLASS = "px-1 py-2 text-primary font-medium";
 
 export default function Navbar() {
   const [programOpen, setProgramOpen] = useState(false);
@@ -65,12 +49,17 @@ export default function Navbar() {
         </Link>
 
         <div className="hidden md:flex items-center gap-8 text-sm">
-          <Link href="/" className={NAV_LINK_ACTIVE_CLASS}>
-            Beranda
-          </Link>
-          <Link href="/about" className={NAV_LINK_CLASS}>
-            Tentang Kami
-          </Link>
+          {NAVIGATION_LINKS.filter(
+            (link) => link.position === "before-program",
+          ).map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={link.active ? NAV_LINK_ACTIVE_CLASS : NAV_LINK_CLASS}
+            >
+              {link.label}
+            </Link>
+          ))}
 
           <div
             className="relative"
@@ -107,9 +96,9 @@ export default function Navbar() {
                           href={item.href}
                           className="flex flex-col gap-2 group"
                         >
-                          <Icon className="w-6 h-6 text-[#1B3B5D]" />
+                          <Icon className="w-6 h-6 text-primary" />
                           <div className="flex items-center gap-2">
-                            <span className="font-medium text-slate-900 group-hover:text-[#1B3B5D] transition-colors">
+                            <span className="font-medium text-slate-900 group-hover:text-primary transition-colors">
                               {item.label}
                             </span>
                             {item.badge && (
@@ -130,27 +119,25 @@ export default function Navbar() {
             )}
           </div>
 
-          <div className="relative">
-            <button className={`flex items-center gap-1 ${NAV_LINK_CLASS}`}>
-              FAQ
-            </button>
-          </div>
-
-          <Link href="/#kontak" className={NAV_LINK_CLASS}>
-            Kontak
-          </Link>
+          {NAVIGATION_LINKS.filter(
+            (link) => link.position === "after-program",
+          ).map((link) => (
+            <Link key={link.href} href={link.href} className={NAV_LINK_CLASS}>
+              {link.label}
+            </Link>
+          ))}
         </div>
 
         <div className="hidden md:flex items-center gap-3">
           <Button
             variant="outline"
-            className="border-[#1B3B5D] px-3 py-4 text-[#1B3B5D] hover:bg-[#EAF3FB] rounded-full"
+            className="border-primary px-3 py-4 text-primary hover:bg-accent rounded-full"
             asChild
           >
             <Link href="/#daftar">Daftar</Link>
           </Button>
           <Button
-            className="bg-[#1B3B5D] px-3 py-4 hover:bg-[#16314f] text-white rounded-full"
+            className="bg-primary px-3 py-4 hover:bg-primary/90 text-white rounded-full"
             asChild
           >
             <Link href="/#masuk">Masuk</Link>
@@ -168,15 +155,21 @@ export default function Navbar() {
 
       {mobileOpen && (
         <div className="md:hidden px-6 pb-5 flex flex-col gap-2 text-sm font-medium">
-          <Link href="/" className="px-4 py-3 rounded-full bg-[#1B3B5D] text-white text-center">
-            Beranda
-          </Link>
-          <Link
-            href="/#tentang"
-            className="px-4 py-3 rounded-full bg-slate-50 text-slate-700 text-center"
-          >
-            Tentang Kami
-          </Link>
+          {NAVIGATION_LINKS.filter(
+            (link) => link.position === "before-program",
+          ).map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={`px-4 py-3 rounded-full text-center ${
+                link.active
+                  ? "bg-primary text-white"
+                  : "bg-slate-50 text-slate-700"
+              }`}
+            >
+              {link.label}
+            </Link>
+          ))}
           {PROGRAM_ITEMS.map((item) => (
             <Link
               key={item.label}
@@ -186,18 +179,26 @@ export default function Navbar() {
               {item.label}
             </Link>
           ))}
-          <Link href="/#kontak" className="px-4 py-3 rounded-full bg-slate-50 text-slate-700 text-center">
-            Kontak
-          </Link>
+          {NAVIGATION_LINKS.filter(
+            (link) => link.position === "after-program",
+          ).map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="px-4 py-3 rounded-full bg-slate-50 text-slate-700 text-center"
+            >
+              {link.label}
+            </Link>
+          ))}
           <div className="flex gap-3 mt-2">
             <Button
               variant="outline"
-              className="flex-1 border-[#1B3B5D] px-3 py-4 text-[#1B3B5D] rounded-full"
+              className="flex-1 border-primary px-3 py-4 text-primary rounded-full"
               asChild
             >
               <Link href="/#daftar">Daftar</Link>
             </Button>
-            <Button className="flex-1 bg-[#1B3B5D] text-white rounded-full" asChild>
+            <Button className="flex-1 bg-primary text-white rounded-full" asChild>
               <Link href="/#masuk">Masuk</Link>
             </Button>
           </div>
